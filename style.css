@@ -1,0 +1,470 @@
+
+:root {
+    --green: #718f36;
+    --dark-green: #263b1c;
+    --red: #e60000;
+    --white: #ffffff;
+    --light: #f5f7f0;
+    --text: #242824;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+/* NAVIGATION */
+.header {
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.navbar {
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--dark-green);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.brand img {
+    width: 52px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.brand small {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+/* DROPDOWN MENU */
+.nav-links .dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 210px;
+    background: var(--white);
+    list-style: none;
+    padding: 12px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    z-index: 200;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.nav-links .dropdown:hover .dropdown-menu,
+.nav-links .dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 680px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.8)
+        ),
+        url('./images/everyonecolor.jpg');
+
+    background-size: cover;
+    background-position: center 50%;
+    background-repeat: no-repeat;
+
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 7vw, 86px);
+    line-height: 1.08;
+    margin: 24px auto;
+    max-width: 800px;
+}
+
+.hero h2 {
+    font-size: 21px;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 30px;
+}
+
+.hero-buttons {
+    font-size: clamp(10px, 7vw, 20px);
+    margin: 24px auto;
+    justify-content: center;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--dark-green);
+    font-weight: 600;
+    transition: none;
+}
+
+.hero-buttons a:hover {
+    background: var(--dark-green);
+    border-color: var(--dark-green);
+    color: #ffffff;
+}
+
+/* ABOUT */
+.about {
+    background: var(--light);
+}
+
+.section-label {
+    display: block;
+    color: #a87927;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+.about h2,
+.activities h2,
+.contact h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    margin: 20px 0;
+    color: var(--dark-green);
+}
+
+.about p,
+.contact p {
+    max-width: 100%;
+    color: #000000;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* ACTIVITIES */
+.activities {
+    background: var(--white);
+}
+
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.activity-card {
+    padding: 35px 28px;
+    border: 1px solid #e5e9df;
+    border-top: 4px solid var(--green);
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-6px);
+}
+
+.activity-card h3 {
+    margin-bottom: 12px;
+    color: var(--dark-green);
+}
+
+.activity-card p {
+    color: #687068;
+    font-size: 15px;
+}
+
+/* CONTACT */
+.contact {
+    background: var(--light);
+}
+
+/* FOOTER */
+.footer {
+    background: #1d2d18;
+    color: var(--white);
+    padding: 30px 0;
+    font-size: 13px;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 25px 5%;
+        gap: 22px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 570px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .footer .container {
+        flex-direction: column;
+    }
+}
+
+/* VISION & MISSION SECTION */
+.vision {
+    background: #eeecdf;
+    border-top: 2px solid var(--dark-green);
+}
+
+.vision .section-label {
+    display: block;
+    color: #a87927;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.vision h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    margin: 20px 0 45px;
+    color: #292820;
+    font-family: Georgia, serif;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid #c9c6b8;
+    gap: 0;
+}
+
+.vision-card {
+    padding: 38px 36px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.vision-card + .vision-card {
+    border-left: 1px solid #c9c6b8;
+}
+
+.vision-card h3 {
+    color: #292820;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.vision-card p {
+    color: #45443c;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-card + .vision-card {
+        border-left: none;
+        border-top: 1px solid #c9c6b8;
+    }
+
+    .vision-card {
+        padding: 28px 24px;
+    }
+}
+
+/* CURRENT EXECUTIVES SECTION */
+.leadership {
+    background: #ffffff;
+}
+
+.leadership .section-label {
+    display: block;
+    color: #a87927;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.leadership h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.2;
+    margin: 20px 0 45px;
+    color: #292820;
+}
+
+.executives-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 30px 24px;
+}
+
+.executive-card {
+    text-align: center;
+}
+
+.executive-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.executive-card h3 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #292820;
+    margin: 14px 0 6px;
+}
+
+.executive-card p {
+    color: #a87927;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* TABLETS */
+@media (max-width: 1000px) {
+    .executives-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .executives-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .executive-card h3 {
+        font-size: 14px;
+    }
+}
